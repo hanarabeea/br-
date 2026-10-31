@@ -1,8 +1,30 @@
 import Script from 'next/script';
 import './globals.css';
 
+const SITE = 'https://www.bragency.cc';
+const TITLE = 'BR Marketing Agency';
+const DESCRIPTION = 'BR frames what people notice, feel and do, then turns that response into a measurable result. Built for Results.';
+const OG_IMAGE = { url: '/og-image.jpg', width: 1200, height: 630, alt: 'BR Marketing Agency. Built for Results.' };
+
 export const metadata = {
-  title: 'BR Marketing Agency',
+  metadataBase: new URL(SITE),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: SITE,
+    siteName: TITLE,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE.url],
+  },
 };
 
 export const viewport = {
